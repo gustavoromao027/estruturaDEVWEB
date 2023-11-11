@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tabela de Contratos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <body>
+    <div class="container mt-5">
+      <form action="/contratos" method="POST">
+        
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="campo1" class="form-label">Número do Contrato:</label>
+            <input type="number" class="form-control" id="campo1" name="campo1">
+          </div>
+
+          <div class="col-md-6">
+            <label for="campo2" class="form-label">Ano do Contrato:</label>
+            <input type="number" class="form-control" id="campo2" name="campo2" min="1900" max="2099">
+          </div>
+          
+          <div class="col-md-6">
+            <label for="campo4" class="form-label">Número do Processo:</label>
+            <input type="number" class="form-control" id="campo4" name="campo4">
+          </div>
+        
+          <div class="col-md-6">
+            <label for="campo5" class="form-label">Ano do Processo:</label>
+            <input type="number" class="form-control" id="campo5" name="campo5" min="1900" max="2099">
+          </div>
+
+          <div class="col-md-6">
+            <label for="campo6" class="form-label">Valor do Contratado:</label>
+            <input type="number" step="0.01" class="form-control" id="campo6" name="campo6">
+          </div>
+
+          <div class="col-md-6">
+            <label for="campo7" class="form-label">CPF / CNPJ:</label>
+            <input type="number" class="form-control" id="campo7" name="campo7">
+          </div>
+
+          <div class="col-md-6">
+            <label for="campo8" class="form-label">Fornecedor:</label>
+            <input type="text" class="form-control" id="campo8" name="campo8">
+          </div>
+
+          <div class="col-md-6">
+            <br>
+            <label for="campo3" class="form-label">Tipo do Contrato:</label>
+            <select class="form-select" id="campo3" name="campo3">
+              <option value="">Todos</option>
+              <option value="Prestação de Serviço">Prestação de Serviço</option>
+              <option value="Obra">Obra</option>
+              <option value="Fornecimento de Material">Fornecimento de Material</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <br>
+            <label for="campo9" class="form-label">Coronavírus:</label>
+            <select class="form-select" id="campo9" name="campo9">
+              <option value="">Todos</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+
+          <div class="col-md-12">
+            <br>
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+
+  <div class="container pt-3 pb-2 mb-3">
+    {{ tabela_html | safe }}
+  </div>
+
+</body>
+
+</html>
